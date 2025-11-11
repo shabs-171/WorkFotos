@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Global 87% width constraint */
+.container-87 {
+  width: 87%;
+  max-width: 1252px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Ensure consistent box-sizing */
+* {
+  box-sizing: border-box;
+}
