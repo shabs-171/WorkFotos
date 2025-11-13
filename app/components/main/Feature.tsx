@@ -3,9 +3,9 @@ import React from 'react';
 
 const Feature = () => {
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden font-sans">
+    <section className="relative bg-white overflow-hidden font-sans">
       {/* Title */}
-      <header className="text-center pt-8 pb-10 px-4 sm:pt-12 sm:pb-14 md:pt-16 md:pb-20">
+      <header className="text-center pt-6 pb-6 px-4 sm:pt-8 sm:pb-8 md:pt-10 md:pb-10">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
           Smart Features For Every
           <br className="sm:hidden" />
@@ -17,11 +17,11 @@ const Feature = () => {
         </p>
       </header>
 
-      {/* Main Flex Container */}
+      {/* Main Flex Container – TIGHT LAYOUT */}
       <div className="w-[87%] max-w-[1252px] mx-auto">
-        <div className="flex h-[300px] sm:h-[450px] md:h-[600px] -space-x-2 sm:-space-x-4 md:-space-x-8 items-center">
+        <div className="flex h-auto min-h-[200px] sm:min-h-[300px] md:min-h-[400px] -space-x-2 sm:-space-x-4 md:-space-x-8 items-center">
 
-          {/* LEFT: 30% – iPhone + Rectangle */}
+          {/* LEFT: 35% → 30% – iPhone + Rectangle */}
           <div className="w-[35%] sm:w-[30%] flex justify-end items-center relative pr-2 sm:pr-4 md:pr-8">
 
             {/* Rectangle – BEHIND */}
@@ -67,28 +67,27 @@ const Feature = () => {
 
             {/* iPhone – ON TOP */}
             <div
-  className="absolute z-20"
-  style={{
-    left: 'clamp(20%, 12vw, 30%)',
-    top: 'clamp(-120px, -8vw, -30px)',                 // STRONGER DOWN on mobile/tablet
-    transform: 'translateX(clamp(-15%, -10vw, -15%)) translateY(-25px)',
-  }}
->
-  <img
-    src="/iphone3.png"
-    alt="WorkFotos App"
-    style={{
-      width: 'clamp(70px, 20vw, 380px)',
-      height: 'auto',
-      aspectRatio: '281 / 580',
-    }}
-    className="object-cover drop-shadow-2xl"
-  />
-</div>
-
+              className="absolute z-20"
+              style={{
+                left: 'clamp(20%, 12vw, 30%)',
+                top: 'clamp(-80px, -6vw, -20px)',
+                transform: 'translateX(clamp(-15%, -10vw, -15%)) translateY(-15px)',
+              }}
+            >
+              <img
+                src="/iphone3.png"
+                alt="WorkFotos App"
+                style={{
+                  width: 'clamp(70px, 20vw, 380px)',
+                  height: 'auto',
+                  aspectRatio: '281 / 580',
+                }}
+                className="object-cover drop-shadow-2xl"
+              />
+            </div>
           </div>
 
-          {/* RIGHT: 70% – Video */}
+          {/* RIGHT: 65% → 70% – Video */}
           <div className="w-[65%] sm:w-[70%] flex justify-start items-center pl-2 sm:pl-4 md:pl-8">
             <div className="relative -ml-2 sm:-ml-4 md:-ml-8">
               <video
@@ -106,7 +105,6 @@ const Feature = () => {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>
