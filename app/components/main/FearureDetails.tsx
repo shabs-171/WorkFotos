@@ -52,7 +52,7 @@ const FeatureDetail = () => {
         "
       >
         {/* LEFT: Text Content */}
-        <div className="flex flex-col items-center justify-center w-full xl:w-[40%] text-center xl:text-left order-1">
+        <div className="flex flex-col items-start justify-start w-full xl:w-[40%] text-center xl:text-left order-1">
           {/* Smart Features Badge */}
           <button className="bg-blue-900 flex items-center gap-2 rounded-full w-[170px] h-[35px] border border-gray-300 px-3 mx-auto xl:mx-0">
             <Image src="/Vector5.png" alt="Smart Features" width={20} height={20} />
@@ -62,7 +62,7 @@ const FeatureDetail = () => {
           </button>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-900 leading-snug font-inter mt-4">
+          <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-900 leading-snug font-inter mt-4 item">
             <span className="text-nowrap">WorkFotos Features That</span>
             <span className="block text-blue-600">Simplify & Scale For</span>
             <span className="block">Your Workflow</span>
