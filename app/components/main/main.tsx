@@ -7,6 +7,9 @@ import ContentFotos from "./ContentFotos";
 import FeatureSection from "./Feature";
 import Feature from "./Feature";
 import PricingPage from "@/app/pricing/page";
+import FeatureDetail from "./FearureDetails";
+
+
 
 
 export default function Main() {
@@ -15,6 +18,8 @@ export default function Main() {
       <HeroSection />
       <ContentFotos />
       <Feature/>
+      <FeatureDetail/>
+      
       
     </main>
   );

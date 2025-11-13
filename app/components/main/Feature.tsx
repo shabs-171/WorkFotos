@@ -1,9 +1,8 @@
-// src/components/Feature.tsx
 import React from 'react';
 
 const Feature = () => {
   return (
-    <section className="relative bg-white overflow-hidden font-sans">
+    <section className="relative bg-white overflow-hidden font-sans pb-[180px] md:pb-[240px] lg:pb-[300px]">
       {/* Title */}
       <header className="text-center pt-6 pb-6 px-4 sm:pt-8 sm:pb-8 md:pt-10 md:pb-10">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
