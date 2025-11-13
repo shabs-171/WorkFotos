@@ -58,7 +58,7 @@ export default function PricingPage() {
             PRICING CARD – Overlaps hero with clamp()
         ------------------------------------------------- */}
         <div
-          className="relative z-10 -mt-[clamp(8rem,16vw,12rem)] flex justify-center"
+          className="relative z-10 -mt-[clamp(8rem,16vw,11rem)] flex justify-center"
         >
           <div className="container-87">
             <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl md:p-8">
@@ -139,7 +139,7 @@ export default function PricingPage() {
         {/* -------------------------------------------------
             SPACER – After card
         ------------------------------------------------- */}
-        <div className="h-16 md:h-20 lg:h-24 bg-white"></div>
+        <div className="h-16 md:h-20 lg:h-20 bg-white"></div>
       </section>
     </>
   );

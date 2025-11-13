@@ -4,11 +4,11 @@ import PricingPage from "./Pricing";
 
 export default function Page() {
 
-
+//space-y-[163px]
   return (
     <>
 
-    <div className="space-y-[163px]">
+    <div className="">
        <PricingPage />
        <FAQAccordion />
        </div>

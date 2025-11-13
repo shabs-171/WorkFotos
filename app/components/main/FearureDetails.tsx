@@ -87,7 +87,7 @@ const FeatureDetail = () => {
           {features.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-[12px] w-full p-5 flex flex-col shadow-sm"
+              className="bg-white border border-gray-100 rounded-[12px] w-full p-5 flex flex-col shadow-sm "
             >
               <div className="flex justify-start mb-[24px]">
                 <img
