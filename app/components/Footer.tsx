@@ -50,68 +50,77 @@ export default function Footer() {
       </div>
 
       {/* FOOTER LINKS - Same 87% width as header */}
-      <div className="container-87 mt-12 sm:mt-16">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
-          {/* Logo & Description */}
-          <div className="w-full lg:max-w-sm text-left">
-            <div className="flex items-center gap-2">
-              <Image src="/logo2.png" alt="Logo" width={257} height={40} />
-            </div>
-            <p className="mt-4 text-gray-600 text-sm">
-              WorkFotos helps visual pros and service teams document, organize,
-              and share work effortlessly.
-            </p>
-            <div className="flex gap-4 mt-4 text-gray-500">
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-x-twitter"></i>
-              <i className="fa-brands fa-linkedin-in"></i>
-              <i className="fa-brands fa-facebook-f"></i>
-            </div>
-          </div>
+         <div className="container-87 mt-12 sm:mt-16">
+  <div className="
+    flex flex-col lg:flex-row 
+    justify-between items-start 
+    gap-8 lg:gap-16
+  ">
+    
+    {/* Left – Logo */}
+    <div className="w-full lg:w-1/3">
+      <Image src="/logo2.png" alt="Logo" width={257} height={40} />
+      <p className="mt-4 text-gray-600 text-sm">
+        WorkFotos helps visual pros and service teams document,
+        organize, and share work effortlessly.
+      </p>
 
-          {/* Resources, Legal, and Stay in the loop */}
-          <div className="w-full lg:flex-1 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
-            {/* Resources */}
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-3">Resources</h4>
-              <ul className="flex flex-col gap-2 text-gray-600 text-sm">
-                <li className="cursor-pointer hover:text-blue-600">Features</li>
-                <li className="cursor-pointer hover:text-blue-600">Pricing</li>
-                <li className="cursor-pointer hover:text-blue-600">How It Works</li>
-                <li className="cursor-pointer hover:text-blue-600">Our Story</li>
-              </ul>
-            </div>
+      <div className="flex gap-3 mt-4 text-gray-500 text-lg">
+        <i className="fa-brands fa-twitter"></i>
+        <i className="fa-brands fa-x-twitter"></i>
+        <i className="fa-brands fa-linkedin-in"></i>
+        <i className="fa-brands fa-facebook-f"></i>
+      </div>
+    </div>
 
-            {/* Legal */}
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-3">Legal</h4>
-              <ul className="flex flex-col gap-2 text-gray-600 text-sm">
-                <li className="cursor-pointer hover:text-blue-600">Terms of Service</li>
-                <li className="cursor-pointer hover:text-blue-600">Privacy Policy</li>
-                <li className="cursor-pointer hover:text-blue-600">Cookie Policy</li>
-              </ul>
-            </div>
+    {/* Center – Resources & Legal */}
+    <div className="w-full lg:w-1/3 flex justify-start lg:justify-center gap-12">
 
-            {/* Stay in the loop */}
-            <div className="text-left lg:max-w-md">
-              <h4 className="font-semibold text-gray-900 mb-3">Stay in the loop</h4>
-              <p className="text-gray-600 mb-4 text-sm">
-                Tips & updates, straight to your inbox.
-              </p>
-              <div className="flex max-w-md">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none text-sm"
-                />
-                <button className="bg-gradient-to-r from-[#0052D4] via-[#4364F7] to-[#6FB1FC] text-white px-4 py-2 rounded-r-full font-medium hover:opacity-90 transition text-sm whitespace-nowrap">
-                  Join
-                </button>
-              </div>
-            </div>
-          </div>
+      <div>
+        <h4 className="font-semibold text-gray-900 mb-3">Resources</h4>
+        <ul className="flex flex-col gap-2 text-gray-600 text-sm">
+          <li className="cursor-pointer hover:text-blue-600">Features</li>
+          <li className="cursor-pointer hover:text-blue-600">Pricing</li>
+          <li className="cursor-pointer hover:text-blue-600">How It Works</li>
+          <li className="cursor-pointer hover:text-blue-600">Our Story</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-semibold text-gray-900 mb-3">Legal</h4>
+        <ul className="flex flex-col gap-2 text-gray-600 text-sm">
+          <li className="cursor-pointer hover:text-blue-600">Terms of Service</li>
+          <li className="cursor-pointer hover:text-blue-600">Privacy Policy</li>
+          <li className="cursor-pointer hover:text-blue-600">Cookie Policy</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Right – Newsletter */}
+    <div className="w-full lg:w-1/3 flex justify-end">
+      <div className="w-full max-w-sm">
+        <h4 className="font-semibold text-gray-900 mb-3">Stay in the loop</h4>
+        <p className="text-gray-600 mb-4 text-sm">Tips & updates, straight to your inbox.</p>
+
+        <div className="flex">
+          <input
+            type="email"
+            placeholder="Your email"
+            className=" px-4 py-2 border border-gray-300 rounded-l-full text-sm"
+          />
+          <button className="
+            bg-gradient-to-r from-[#0052D4] via-[#4364F7] to-[#6FB1FC]
+            text-white px-4 py-2 rounded-r-full text-sm font-medium
+          ">
+            Join
+          </button>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
+
 
       {/* COPYRIGHT - Same 87% width as header */}
       <div className="container-87 mt-8 sm:mt-10">
