@@ -30,7 +30,7 @@ const slides = [
 const Slider = () => {
   return (
     <div className="w-full flex justify-center py-20 bg-white">
-      <div className="max-w-7xl w-full px-4">
+      <div className="container-87">
 
         {/* Header */}
         <div className="text-center mb-12 mx-auto max-w-[704px]">
@@ -43,9 +43,8 @@ const Slider = () => {
           </p>
         </div>
 
-        {/* ==== ARROWS ==== */}
+        {/* Arrows */}
         <div className="flex justify-end items-center gap-1 mb-6">
-          {/* LEFT ARROW */}
           <div
             className="swiper-button-prev-custom cursor-pointer select-none"
             role="button"
@@ -56,11 +55,9 @@ const Slider = () => {
               width={44}
               height={44}
               alt="Previous"
-              className="w-11 h-11"   // force same size
+              className="w-11 h-11"
             />
           </div>
-
-          {/* RIGHT ARROW */}
           <div
             className="swiper-button-next-custom cursor-pointer select-none"
             role="button"
@@ -76,7 +73,7 @@ const Slider = () => {
           </div>
         </div>
 
-        {/* ==== SWIPER ==== */}
+        {/* Swiper */}
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -94,7 +91,7 @@ const Slider = () => {
               key={i}
               className="py-8"
               style={{
-                width: "760px",
+                width: "760px", // Default width for larger screens
                 height: "auto",
               }}
             >
@@ -107,7 +104,7 @@ const Slider = () => {
                   `}
                   style={{
                     backgroundImage: "url('/slider1.png')",
-                    minHeight: "320px",
+                    minHeight: "320px", // Default height for larger screens
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
@@ -135,6 +132,20 @@ const Slider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Mobile Styles */}
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .container-87 :global(.swiper-slide) {
+              width: 90% !important;
+              min-height: 280px !important;
+            }
+            .container-87 :global(.swiper-slide > div) {
+              min-height: 280px !important;
+              padding: 1.5rem !important;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );
