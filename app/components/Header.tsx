@@ -23,12 +23,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isMenuOpen || isScrolled
-          ? "bg-white shadow-lg"
-          : "bg-white/5 backdrop-blur-lg"
-      }`}
-    >
+  className={`fixed top-0 left-0 w-full z-50 ${
+    isMenuOpen
+      ? "bg-white shadow-lg" // immediately solid when menu opens
+      : isScrolled
+      ? "bg-white shadow-lg transition-all duration-500" // only scroll triggers smooth transition
+      : "bg-white/5 backdrop-blur-lg transition-all duration-500"
+  }`}
+>
+
       <div className="container-87 flex items-center justify-between h-[80px] md:h-[100px]">
         
         {/* Logo */}
@@ -97,31 +100,23 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile & Tablet Menu Button */}
         <button
-          className="xl:hidden flex flex-col justify-center items-center w-10 h-10 bg-blue-600 rounded-md"
+          className="xl:hidden flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-transparent"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
-            }`}
-          />
-          <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1.5 ${
-              isMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1.5 ${
-              isMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-1"
-            }`}
+          <Image
+            src="/hamburger.png"
+            alt="Menu"
+            width={21}
+            height={14}
+            className="object-contain w-6 h-4 md:w-8 md:h-6"
           />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile & Tablet Menu */}
       <div
         className={`xl:hidden fixed top-0 left-0 w-full h-full bg-blue-800 z-50 flex flex-col justify-between transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -130,11 +125,16 @@ const Header = () => {
         <div className="absolute top-5 right-5">
           <button
             onClick={closeMenu}
-            className="flex flex-col justify-center items-center w-10 h-10 bg-blue-700 rounded-md"
+            className="flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-transparent"
             aria-label="Close menu"
           >
-            <span className="w-6 h-0.5 bg-white rotate-45" />
-            <span className="w-6 h-0.5 bg-white -rotate-45 -translate-y-0.5" />
+            <Image
+              src="/hamburger.png"
+              alt="Close menu"
+              width={21}
+              height={14}
+              className="object-contain w-6 h-4 md:w-8 md:h-6"
+            />
           </button>
         </div>
 
@@ -146,7 +146,7 @@ const Header = () => {
                 key={item}
                 href={href}
                 onClick={closeMenu}
-                className="text-white text-[18px] font-medium hover:text-blue-200 transition-colors duration-200"
+                className="text-white text-[18px] font-medium hover:text-blue-200 transition-colors duration-200 text-left"
               >
                 {item}
               </Link>
@@ -154,15 +154,15 @@ const Header = () => {
           })}
         </div>
 
-        <div className="px-8 pb-12 flex flex-col sm:flex-row gap-4">
+        <div className="px-8 pb-12 flex flex-col gap-4">
 
-          {/* MOBILE MEMBER LOGIN */}
-          <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full sm:w-48">
+          {/* MOBILE & TABLET MEMBER LOGIN */}
+          <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
             Member Login
           </button>
 
-          {/* MOBILE JOIN TODAY */}
-          <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full sm:w-48">
+          {/* MOBILE & TABLET JOIN TODAY */}
+          <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
             Join Today
           </button>
 

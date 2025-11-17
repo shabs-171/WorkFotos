@@ -20,7 +20,7 @@ const slides = [
     avatar: "/fi3.png",
   },
   {
-    text: "Managing client work is easier than ever—super fast, super clean UI.",
+    text: "Managing client work is easier than ever—super fast, super clean UI. WorkFotos has completely simplified how we organize and access our photo archives. ",
     name: "Sarah L.",
     role: "Creative Lead",
     avatar: "/fi3.png",

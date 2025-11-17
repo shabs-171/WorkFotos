@@ -45,56 +45,54 @@ const FeatureDetail = () => {
     >
       <div
         className="
-          container-87 flex flex-col xl:flex-row
-          items-center justify-between
-          gap-[80px] xl:gap-[146px]
+          container-87 flex flex-col md:flex-col lg:flex-row
+          items-center justify-center
+          gap-6 md:gap-8 lg:gap-[15px] xl:gap-[146px]
           py-16 xl:py-24
         "
       >
         {/* LEFT: Text Content */}
-        <div className="flex flex-col items-start justify-start w-full xl:w-[40%] text-center xl:text-left order-1">
-          {/* Smart Features Badge */}
-          <button className="bg-blue-900 flex items-center gap-2 rounded-full w-[170px] h-[35px] border border-gray-300 px-3 mx-auto xl:mx-0">
-            <Image src="/Vector5.png" alt="Smart Features" width={20} height={20} />
+        <div className="flex flex-col items-start md:items-center lg:items-start justify-start w-full lg:w-[40%] text-left md:text-center lg:text-left order-1 mb-6 lg:mb-0">
+          {/* Badge */}
+          <button className="bg-blue-900 flex items-center gap-2 rounded-full w-[170px] h-[35px] border border-gray-300 px-3">
+            <Image src="/Vector5.png" alt="Smart Features" width={18} height={18} />
             <span className="font-inter font-normal text-[16px] text-white">
               Smart Features
             </span>
           </button>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-900 leading-snug font-inter mt-4 item">
-            <span className="text-nowrap">WorkFotos Features That</span>
-            <span className="block text-blue-600">Simplify & Scale For</span>
-            <span className="block">Your Workflow</span>
+          <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[28px] xl:text-[36px] font-bold text-gray-900 leading-snug font-inter mt-4">
+            WorkFotos Features That <span className="text-blue-600">Simplify & Scale For</span> Your Workflow
           </h2>
 
-          {/* Desktop Button (only visible on xl+) */}
-          <button className="hidden xl:flex mt-6 bg-blue-600 hover:bg-blue-700 text-white items-center justify-center gap-2 rounded-[16px] w-[190px] h-[53px] text-[16px] font-semibold">
+          {/* Desktop Button */}
+          <button className="hidden lg:flex bg-blue-600 hover:bg-blue-700 text-white items-center justify-center gap-2 rounded-[16px] w-[190px] h-[53px] text-[16px] font-semibold mt-6 group">
             Join WorkFotos
             <Image
               src="/Frame1.png"
               alt="Arrow Icon"
               width={20}
               height={18}
-              className="inline-block"
+              className="inline-block transition-transform duration-300 group-hover:rotate-45"
             />
           </button>
         </div>
 
         {/* RIGHT: Features Grid */}
-       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full xl:w-[55%] order-2 lg:-mt-21">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-[15px] w-full lg:w-[55%] order-2">
           {features.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-[12px] w-full p-5 flex flex-col shadow-sm "
+              className="
+                bg-white border border-gray-100 rounded-[12px] w-full p-5 flex flex-col shadow-sm
+                transition-all duration-300
+                hover:border-t-purple-400 hover:border-l-purple-400 hover:border-r-purple-400
+                hover:border-b-8 hover:border-b-purple-400
+              "
             >
               <div className="flex justify-start mb-[24px]">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-[30px] h-[30px] object-contain"
-                />
+                <img src={item.img} alt={item.title} className="w-[30px] h-[30px] object-contain" />
               </div>
 
               <h3 className="font-inter font-semibold text-[20px] text-gray-900 leading-snug mb-[16px]">
@@ -108,8 +106,8 @@ const FeatureDetail = () => {
           ))}
         </div>
 
-        {/* Mobile/Tablet Join Button (bottom of layout) */}
-        <div className="flex xl:hidden w-full justify-center mt-10 order-3">
+        {/* Mobile/Tablet Join Button */}
+        <div className="flex lg:hidden w-full justify-center mt-6 order-3">
           <button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 rounded-[16px] w-[190px] h-[53px] text-[16px] font-semibold">
             Join WorkFotos
             <Image
