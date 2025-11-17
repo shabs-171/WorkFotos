@@ -1,5 +1,6 @@
 import HeroSection from "./Herosection";
 import HowItWorks from "./HowItWorks";
+import WorksiteRoles from "./WorkSites";
 
 
 export default function Page() {
@@ -8,6 +9,7 @@ export default function Page() {
         <>
         <HeroSection/>
         <HowItWorks/>
+        <WorksiteRoles/>
         </>
 
     );

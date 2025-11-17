@@ -26,7 +26,7 @@ export default function HeroSection() {
             More Business
           </h1>
 
-          <p className="mt-4 text-white/90 font-normal leading-[1.5] text-[14px] md:text-[16px] lg:text-[20px]">
+          <p className="mt-4 text-white/90 font-normal leading-normal text-[14px] md:text-[16px] lg:text-[20px]">
             Organize, showcase, and grow with the visual platform built for
             service pros who want to win more work.
           </p>
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 rounded-full w-[160px] h-[45px] text-[14px] md:w-[180px] md:h-[50px] md:text-[15px] lg:w-[190px] lg:h-[53px] lg:text-[16px] font-semibold">
             Join WorkFotos
             <Image
-              src="/Frame1.png"
+              src="/whitearrow.png"
               alt="Arrow Icon"
               width={20}
               height={18}

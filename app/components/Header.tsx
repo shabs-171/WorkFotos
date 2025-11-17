@@ -26,10 +26,11 @@ const Header = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isMenuOpen || isScrolled
           ? "bg-white shadow-lg"
-          : "bg-gradient-to-b from-black/40 via-black/20 to-transparent backdrop-blur-[2px]"
+          : "bg-white/5 backdrop-blur-lg"
       }`}
     >
       <div className="container-87 flex items-center justify-between h-[80px] md:h-[100px]">
+        
         {/* Logo */}
         <div className="relative w-40 h-10 md:w-56 md:h-11">
           <Link href="/">
@@ -47,11 +48,11 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {["How it works", "Pricing", "Contact"].map((item) => {
-               const href =
-                 item === "Pricing"
-                 ? "/pricing"
-                 : item === "How it works"
-                ? "/work"
+              const href =
+                item === "Pricing"
+                  ? "/pricing"
+                  : item === "How it works"
+                  ? "/work"
                   : "/contact";
               return (
                 <Link
@@ -69,22 +70,27 @@ const Header = () => {
             })}
           </nav>
 
+          {/* BUTTONS with Figma Specs */}
           <div className="flex items-center gap-4">
+            
+            {/* MEMBER LOGIN BUTTON */}
             <button
-              className={`border px-5 py-2 rounded-full font-semibold text-[14px] ${
-                isMenuOpen || isScrolled
-                  ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                  : "border-white text-white hover:bg-blue-700"
-              } transition duration-200`}
+              className={`w-auto h-[49px] px-6 rounded-[100px] border text-[16px] font-semibold transition duration-200
+                ${
+                  isMenuOpen || isScrolled
+                    ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    : "border-white text-white hover:bg-blue-600 hover:text-white"
+                }
+              `}
             >
               Member Login
             </button>
+
+            {/* JOIN TODAY BUTTON */}
             <button
-              className={`px-5 py-2 rounded-full font-semibold text-[14px] ${
-                isMenuOpen || isScrolled
-                  ? "bg-blue-600 text-white hover:bg-blue-700"
-                  : "bg-white text-blue-600 hover:bg-gray-100"
-              } transition duration-200`}
+              className={`w-auto h-[49px] px-6 rounded-[100px] text-[16px] font-semibold
+                transition duration-200 bg-blue-600 text-white hover:bg-blue-700
+              `}
             >
               Join Today
             </button>
@@ -93,7 +99,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden flex flex-col justify-center items-center w-10 h-10 bg-blue-600 rounded-md transition-none"
+          className="xl:hidden flex flex-col justify-center items-center w-10 h-10 bg-blue-600 rounded-md"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -124,10 +130,10 @@ const Header = () => {
         <div className="absolute top-5 right-5">
           <button
             onClick={closeMenu}
-            className="flex flex-col justify-center items-center w-10 h-10 bg-blue-700 rounded-md transition-none"
+            className="flex flex-col justify-center items-center w-10 h-10 bg-blue-700 rounded-md"
             aria-label="Close menu"
           >
-            <span className="w-6 h-0.5 bg-white rotate-45 translate-y-0" />
+            <span className="w-6 h-0.5 bg-white rotate-45" />
             <span className="w-6 h-0.5 bg-white -rotate-45 -translate-y-0.5" />
           </button>
         </div>
@@ -149,12 +155,17 @@ const Header = () => {
         </div>
 
         <div className="px-8 pb-12 flex flex-col sm:flex-row gap-4">
+
+          {/* MOBILE MEMBER LOGIN */}
           <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full sm:w-48">
             Member Login
           </button>
+
+          {/* MOBILE JOIN TODAY */}
           <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full sm:w-48">
             Join Today
           </button>
+
         </div>
       </div>
 
