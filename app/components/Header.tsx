@@ -47,7 +47,12 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {["How it works", "Pricing", "Contact"].map((item) => {
-              const href = item === "Pricing" ? "/pricing" : "#";
+               const href =
+                 item === "Pricing"
+                 ? "/pricing"
+                 : item === "How it works"
+                ? "/work"
+                  : "/contact";
               return (
                 <Link
                   key={item}

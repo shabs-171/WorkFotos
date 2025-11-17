@@ -25,6 +25,12 @@ const slides = [
     role: "Creative Lead",
     avatar: "/fi3.png",
   },
+  {
+    text: "Managing client work is easier than ever—super fast, super clean UI.",
+    name: "Sarah L.",
+    role: "Creative Lead",
+    avatar: "/fi3.png",
+  },
 ];
 
 const Slider = () => {
@@ -80,7 +86,7 @@ const Slider = () => {
             prevEl: ".swiper-button-prev-custom",
             nextEl: ".swiper-button-next-custom",
           }}
-          spaceBetween={40}
+          spaceBetween={10}
           loop={true}
           centeredSlides={true}
           slidesPerView="auto"

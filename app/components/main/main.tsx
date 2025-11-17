@@ -20,9 +20,7 @@ export default function Main() {
       <ContentFotos />
       <Feature/>
       <FeatureDetail/>
-      <Slider/>
-      
-      
+      <Slider/> 
     </main>
   );
 }
