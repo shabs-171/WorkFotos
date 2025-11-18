@@ -11,7 +11,7 @@ export default function ContentFotos() {
   };
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#F8FAFC] to-[#FFFFFF] py-16 md:py-20">
+    <section className="relative w-full bg-gradient-to-br from-[#F8FAFC] to-[#FFFFFF] py-16 md:py-20" id="contentfotos" >
       <div className="container-87 flex flex-col items-center">
         {/* Top-centered Title */}
         <div className="text-center ">

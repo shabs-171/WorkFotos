@@ -23,14 +23,14 @@ export default function Footer() {
                 Start sorting, sorting and sharing with ease, all available in one
                 place.
               </p>
-              <button className="mt-6 flex items-center justify-center gap-2 bg-white text-black font-semibold px-3 sm:px-5 py-2 rounded-full hover:bg-blue-100 transition w-[150px] sm:w-auto text-xs sm:text-sm whitespace-nowrap">
+              <button className="mt-6 flex items-center justify-center gap-2 bg-white text-black font-semibold px-3 sm:px-5 py-2 rounded-full hover:bg-blue-100 transition w-[150px] sm:w-auto text-xs sm:text-sm whitespace-nowrap group">
                 Get Started Free
                 <Image
                   src="/Frame1.png"
                   alt="Arrow icon"
                   width={16}
                   height={16}
-                  className="inline-block"
+                  className="inline-block transition-transform duration-300 group-hover:rotate-45"
                 />
               </button>
             </div>

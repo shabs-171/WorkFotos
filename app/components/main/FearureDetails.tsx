@@ -111,7 +111,7 @@ const FeatureDetail = () => {
           <button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 rounded-[16px] w-[190px] h-[53px] text-[16px] font-semibold">
             Join WorkFotos
             <Image
-              src="/Frame1.png"
+              src="/whitearrow.png"
               alt="Arrow Icon"
               width={20}
               height={18}
