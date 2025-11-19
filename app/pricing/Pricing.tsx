@@ -55,83 +55,79 @@ export default function PricingPage() {
         </div>
 
         {/* -------------------------------------------------
-            PRICING CARD – Overlaps hero with clamp()
+            PRICING CARD – Overlaps hero
         ------------------------------------------------- */}
-        <div
-          className="relative z-10 -mt-[clamp(8rem,16vw,11rem)] flex justify-center"
-        >
+        <div className="relative z-10 -mt-[clamp(8rem,16vw,11rem)] flex justify-center">
           <div className="container-87">
-            <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl md:p-8">
-              {/* RECOMMENDED badge */}
-              <div className="mb-4 flex justify-center">
-                <Image
-                  src="/recommend.png"
-                  alt="RECOMMENDED"
-                  width={140}
-                  height={32}
-                  className="h-auto w-auto"
-                />
+            <div className="mx-auto w-full max-w-md rounded-2xl bg-white shadow-2xl md:p-8 relative">
+              
+              {/* RECOMMENDED top bar */}
+              <div className="absolute top-0 left-0 w-full h-[29px] bg-blue-600 rounded-t-2xl flex items-center justify-center z-10">
+                <span className="text-white text-sm font-bold">RECOMMENDED</span>
               </div>
 
-              <h3 className="mb-2 text-center text-2xl font-bold text-gray-900">
-                WorkFotos Pro
-              </h3>
-              <p className="mb-4 text-center text-sm text-gray-600">
-                Perfect for solo professionals and growing teams.
-              </p>
+              {/* Card Content */}
+              <div className="pt-[29px] p-6 md:p-8 rounded-b-2xl">
+                <h3 className="mb-2 text-center text-2xl font-bold text-gray-900">
+                  WorkFotos Pro
+                </h3>
+                <p className="mb-4 text-center text-sm text-gray-600">
+                  Perfect for solo professionals and growing teams.
+                </p>
 
-              {/* Price */}
-              <div className="mb-4 text-center">
-                <span className="text-4xl font-bold text-blue-600">$29</span>
-                <span className="text-lg text-gray-600">/mo</span>
-              </div>
+                {/* Price */}
+                <div className="mb-4 text-center">
+                  <span className="text-4xl font-bold text-blue-600">$29</span>
+                  <span className="text-lg text-gray-600">/mo</span>
+                </div>
 
-              <p className="mb-6 text-center text-xs text-gray-500">
-                15-Day Free Trial. Cancel Anytime.
-              </p>
+                <p className="mb-6 text-center text-xs text-gray-500">
+                  15-Day Free Trial. Cancel Anytime.
+                </p>
 
-              {/* CTA Button */}
-              <div className="mb-8 flex justify-center">
-                <Link href="/signup">
-                  <Image
-                    src="/Button1.png"
-                    alt="Get Start Now"
-                    width={260}
-                    height={56}
-                    className="h-auto w-auto transition-transform hover:scale-105"
-                  />
-                </Link>
-              </div>
-
-              {/* Features List */}
-              <p className="mb-3 text-center text-sm font-semibold text-gray-800">
-                Top Features Included:
-              </p>
-
-              <ul className="space-y-2 text-sm text-gray-700">
-                {[
-                  "Unlimited Photo Storage",
-                  "Owner plus 2 FREE seats included (two team members)",
-                  "Project Album Tools",
-                  "Estimates & Invoices",
-                  "Before & After Templates",
-                  "Map-Linked Photos",
-                  "Public Portfolio Page",
-                  "Private Notes & Markups",
-                  "Mobile + Desktop Access",
-                ].map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
+                {/* CTA Button */}
+                <div className="mb-8 flex justify-center">
+                  <Link href="/signup">
                     <Image
-                      src="/fi4.png"
-                      alt="check"
-                      width={18}
-                      height={18}
-                      className="mt-0.5 flex-shrink-0"
+                      src="/Button1.png"
+                      alt="Get Start Now"
+                      width={260}
+                      height={56}
+                      className="h-auto w-auto transition-transform hover:scale-105"
                     />
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
+                  </Link>
+                </div>
+
+                {/* Features List */}
+                <p className="mb-3 text-center text-sm font-semibold text-gray-800">
+                  Top Features Included:
+                </p>
+
+                <ul className="space-y-2 text-sm text-gray-700">
+                  {[
+                    "Unlimited Photo Storage",
+                    "Owner plus 2 FREE seats included (two team members)",
+                    "Project Album Tools",
+                    "Estimates & Invoices",
+                    "Before & After Templates",
+                    "Map-Linked Photos",
+                    "Public Portfolio Page",
+                    "Private Notes & Markups",
+                    "Mobile + Desktop Access",
+                  ].map((feat, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <Image
+                        src="/fi4.png"
+                        alt="check"
+                        width={18}
+                        height={18}
+                        className="mt-0.5 flex-shrink-0"
+                      />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
