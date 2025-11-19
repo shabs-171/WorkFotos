@@ -30,7 +30,6 @@ const slides = [
 const Slider = () => {
   return (
     <div className="w-full flex justify-center py-12 md:py-20 bg-white">
-      {/* Container with .container-87 constraints */}
       <div className="w-[87%] max-w-[1252px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12 mx-auto max-w-[704px]">
@@ -46,10 +45,22 @@ const Slider = () => {
         {/* Arrows */}
         <div className="flex justify-end items-center gap-2 mb-4 md:mb-6">
           <div className="swiper-button-prev-custom cursor-pointer select-none">
-            <Image src="/Arrowleft1.png" width={36} height={36} alt="Previous" className="w-8 h-8 md:w-11 md:h-11" />
+            <Image
+              src="/Arrowleft1.png"
+              width={36}
+              height={36}
+              alt="Previous"
+              className="w-8 h-8 md:w-11 md:h-11"
+            />
           </div>
           <div className="swiper-button-next-custom cursor-pointer select-none">
-            <Image src="/Arrowright1.png" width={36} height={36} alt="Next" className="w-8 h-8 md:w-11 md:h-11" />
+            <Image
+              src="/Arrowright1.png"
+              width={36}
+              height={36}
+              alt="Next"
+              className="w-8 h-8 md:w-11 md:h-11"
+            />
           </div>
         </div>
 
@@ -61,39 +72,58 @@ const Slider = () => {
             nextEl: ".swiper-button-next-custom",
           }}
           loop={true}
-          centeredSlides={true}
-          spaceBetween={20}
+          spaceBetween={30}
           slidesPerView={1}
+          centeredSlides={true}
           breakpoints={{
-            820: {
+            640: {
               slidesPerView: 1,
+              spaceBetween: 15,
+              centeredSlides: true,
+            },
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+              centeredSlides: true,
+            },
+            1024: {
+              slidesPerView: 1.2,
               spaceBetween: 30,
               centeredSlides: true,
             },
-            1440: {
-              slidesPerView: 2,
+            1280: {
+              slidesPerView: 1.5,
               spaceBetween: 40,
-              centeredSlides: false,
+              centeredSlides: true,
+            },
+            1440: {
+              slidesPerView: 1.5,
+              spaceBetween: 50,
+              centeredSlides: true,
             },
           }}
           className="w-full"
         >
           {slides.map((slide, i) => (
-            <SwiperSlide key={i} className="py-4 md:py-6 flex justify-center">
+            <SwiperSlide
+              key={i}
+              className="py-4 md:py-6 flex justify-center"
+            >
               {({ isActive }) => (
                 <div
-                  className={`
-                    relative w-full max-w-full sm:max-w-[720px] transition-all duration-300 ease-in-out
-                    ${isActive ? "scale-100 opacity-100" : "scale-95 opacity-70"}
-                  `}
-                  style={{ minHeight: "300px" }}
+                  className={`relative transition-all duration-300 ease-in-out 
+                    w-full
+                    max-w-[342px] h-[245px]          /* mobile default */
+                    md:max-w-[706px] md:h-[270px]   /* tablet */
+                    lg:max-w-[800px] lg:h-[306px]   /* laptop */
+                    ${isActive ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
                 >
                   {/* Background */}
                   <div
-                    className="absolute inset-0 rounded-2xl"
+                    className="absolute inset-0 rounded-[14px] md:rounded-[16px]"
                     style={{
                       backgroundImage: "url('/slider1.png')",
-                      backgroundSize: "contain",
+                      backgroundSize: "cover",
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center",
                       zIndex: 0,
@@ -101,30 +131,35 @@ const Slider = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-4 sm:p-6 md:p-8">
-                    <Image 
-                      src="/slider3.png" 
-                      width={32} 
-                      height={32} 
-                      alt="" 
-                      className="mb-2 md:mb-4 w-6 h-6 md:w-10 md:h-10" 
+                  <div className="relative z-10 flex flex-col justify-between h-full p-3 md:p-6">
+                    {/* Quote Icon */}
+                    <Image
+                      src="/slider3.png"
+                      width={32}
+                      height={32}
+                      alt=""
+                      className="w-6 h-6 md:w-8 md:h-8 mb-2"
                     />
-                    <p className="text-xs md:text-sm lg:text-base leading-relaxed text-gray-800 flex-1 break-words">
+
+                    {/* Text Content */}
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-800 flex-1 break-words line-clamp-4 md:line-clamp-5">
                       {slide.text}
                     </p>
-                    <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-3 md:mt-4 lg:mt-6">
+
+                    {/* Avatar Section */}
+                    <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mt-2 md:mt-3 h-[40px] md:h-[50px]">
                       <Image
                         src={slide.avatar}
-                        width={32}
-                        height={32}
+                        width={50}
+                        height={50}
                         alt={slide.name}
-                        className="rounded-full w-8 h-8 md:w-12 md:h-12 lg:w-[58px] lg:h-[58px]"
+                        className="rounded-full w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm md:text-base lg:text-lg font-bold text-gray-900 break-words">
+                        <p className="text-xs sm:text-sm md:text-base font-bold text-gray-900 break-words truncate">
                           {slide.name}
                         </p>
-                        <p className="text-xs md:text-sm text-gray-600 break-words">
+                        <p className="text-xs sm:text-xs md:text-sm text-gray-600 break-words truncate">
                           {slide.role}
                         </p>
                       </div>
@@ -139,5 +174,6 @@ const Slider = () => {
     </div>
   );
 };
+
 
 export default Slider;
