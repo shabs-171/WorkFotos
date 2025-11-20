@@ -31,14 +31,14 @@ export default function HeroSection() {
             service pros who want to win more work.
           </p>
 
-          <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 rounded-full w-[160px] h-[45px] text-[14px] md:w-[180px] md:h-[50px] md:text-[15px] lg:w-[190px] lg:h-[53px] lg:text-[16px] font-semibold">
+          <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 rounded-full w-[160px] h-[45px] text-[14px] md:w-[180px] md:h-[50px] md:text-[15px] lg:w-[190px] lg:h-[53px] lg:text-[16px] font-semibold group">
             Join WorkFotos
             <Image
               src="/whitearrow.png"
               alt="Arrow Icon"
               width={20}
               height={18}
-              className="inline-block"
+              className="inline-block transition-transform duration-300 group-hover:rotate-45"
             />
           </button>
         </div>
