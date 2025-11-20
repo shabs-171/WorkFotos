@@ -1,6 +1,7 @@
 // components/WorksiteRoles.tsx
 "use client"
-import Image from 'next/image'; // Remove this line if you're not using Next.js
+import Image from 'next/image';
+import { useRef } from 'react';
 
 const WorksiteRoles = () => {
   return (
@@ -19,77 +20,37 @@ const WorksiteRoles = () => {
 
           {/* Cards Grid */}
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {/* Card 1 */}
-            <div className="relative group">
-              <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-3">
-                <Image
-                  src="/inter.jpg"
-                  alt="Interior Designer"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <span className="bg-white px-6 py-3 rounded-full shadow-lg text-gray-800 font-semibold text-sm whitespace-nowrap">
-                  Interior Designer
-                </span>
-              </div>
-            </div>
+            {/* Card 1 - Interior Designer */}
+            <VideoCard 
+              imageSrc="/inter.jpg"
+              videoSrc="/inter.mp4"
+              altText="Interior Designer"
+              title="Interior Designer"
+            />
 
-            {/* Card 2 */}
-            <div className="relative group">
-              <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-3">
-                <Image
-                  src="/const1.jpg"
-                  alt="General Contractors"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <span className="bg-white px-6 py-3 rounded-full shadow-lg text-gray-800 font-semibold text-sm whitespace-nowrap">
-                  General Contractors
-                </span>
-              </div>
-            </div>
+            {/* Card 2 - General Contractors */}
+            <VideoCard 
+              imageSrc="/const1.jpg"
+              videoSrc="/construction.mp4"
+              altText="General Contractors"
+              title="General Contractors"
+            />
 
-            {/* Card 3 */}
-            <div className="relative group">
-              <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-3">
-                <Image
-                  src="/estate.jpg"
-                  alt="Real Estate Agency"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <span className="bg-white px-6 py-3 rounded-full shadow-lg text-gray-800 font-semibold text-sm whitespace-nowrap">
-                  Real Estate Agency
-                </span>
-              </div>
-            </div>
+            {/* Card 3 - Real Estate Agency */}
+            <VideoCard 
+              imageSrc="/estate.jpg"
+              videoSrc="/estate.mp4"
+              altText="Real Estate Agency"
+              title="Real Estate Agency"
+            />
 
-            {/* Card 4 */}
-            <div className="relative group">
-              <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-3">
-                <Image
-                  src="/tour.png"
-                  alt="Tourism & Travel Agency"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                <span className="bg-white px-6 py-3 rounded-full shadow-lg text-gray-800 font-semibold text-sm whitespace-nowrap">
-                  Tourism & Travel Agency
-                </span>
-              </div>
-            </div>
+            {/* Card 4 - Tourism & Travel Agency */}
+            <VideoCard 
+              imageSrc="/tour.png"
+              videoSrc="/tour.mp4"
+              altText="Tourism & Travel Agency"
+              title="Tourism & Travel Agency"
+            />
           </div>
         </div>
       </section>
@@ -103,6 +64,71 @@ const WorksiteRoles = () => {
         }
       `}</style>
     </>
+  );
+};
+
+// Video Card Component
+interface VideoCardProps {
+  imageSrc: string;
+  videoSrc: string;
+  altText: string;
+  title: string;
+}
+
+const VideoCard = ({ imageSrc, videoSrc, altText, title }: VideoCardProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  return (
+    <div 
+      className="relative group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 relative">
+        {/* Image - shown by default */}
+        <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0">
+          <Image
+            src={imageSrc}
+            alt={altText}
+            width={400}
+            height={500}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Video - shown on hover */}
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+        <span className="bg-white px-6 py-3 rounded-full shadow-lg text-gray-800 font-semibold text-sm whitespace-nowrap">
+          {title}
+        </span>
+      </div>
+    </div>
   );
 };
 
