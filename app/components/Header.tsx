@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolledPastContent, setIsScrolledPastContent] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -17,9 +19,12 @@ const Header = () => {
       setIsScrolledPastContent(window.scrollY >= contentOffset);
     };
 
+    // Run once to check initial scroll position
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]); // re-run when route changes
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -106,57 +111,83 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`xl:hidden fixed top-0 left-0 w-full h-full bg-blue-800 z-50 flex flex-col justify-between transition-transform duration-300 ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="absolute top-5 right-5">
-          <button
-            onClick={closeMenu}
-            className="flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-transparent"
-            aria-label="Close menu"
-          >
-            <Image
-              src="/hamburger.png"
-              alt="Close menu"
-              width={21}
-              height={14}
-              className="object-contain w-6 h-4 md:w-8 md:h-6"
-            />
-          </button>
-        </div>
+<div
+  className={`fixed top-0 right-0 h-full bg-blue-800 z-50 flex flex-col justify-between transition-transform duration-300
+    w-full md:w-1/2  /* full width on mobile, half width on tablet and up */
+    ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+>
+  <div className="absolute top-5 right-5">
+    <button
+      onClick={closeMenu}
+      className="flex justify-center items-center w-10 h-10 md:w-12 md:h-12 bg-transparent"
+      aria-label="Close menu"
+    >
+      <Image
+        src="/hamburger.png"
+        alt="Close menu"
+        width={21}
+        height={14}
+        className="object-contain w-6 h-4 md:w-8 md:h-6"
+      />
+    </button>
+  </div>
 
-        <div className="px-8 pt-24 flex flex-col gap-6">
-          {["How it works", "Pricing", "Contact"].map((item) => {
-            const href = item === "Pricing" ? "/pricing" : "#";
-            return (
-              <Link
-                key={item}
-                href={href}
-                onClick={closeMenu}
-                className="text-white text-[18px] font-medium hover:text-blue-200 transition-colors duration-200 text-left"
-              >
-                {item}
-              </Link>
-            );
-          })}
-        </div>
+  <div className="px-8 pt-24 flex flex-col gap-6">
+    {["How it works", "Pricing", "Contact"].map((item) => {
+      const href = item === "Pricing" ? "/pricing" : "#";
+      return (
+        <Link
+          key={item}
+          href={href}
+          onClick={closeMenu}
+          className="text-white text-[18px] font-medium hover:text-blue-200 transition-colors duration-200 text-left"
+        >
+          {item}
+        </Link>
+      );
+    })}
+  </div>
 
-        <div className="px-8 pb-12 flex flex-col gap-4">
-          <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
-            Member Login
-          </button>
-          <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
-            Join Today
-          </button>
-        </div>
-      </div>
+  <div className="px-8 pb-12 flex flex-col gap-4">
+    <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
+      Member Login
+    </button>
+    <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
+      Join Today
+    </button>
+  </div>
+</div>
+
+{/* Overlay */}
+{isMenuOpen && (
+  <div
+    className=" md:hidden" // overlay only on mobile
+    onClick={closeMenu}
+  />
+)}
+
+
+{/* Overlay */}
+{isMenuOpen && (
+  <div
+    className=" xl:hidden" // overlay only on mobile
+    onClick={closeMenu}
+  />
+)}
+
+
+{/* Overlay */}
+{isMenuOpen && (
+  <div
+    className="xl:hidden  z-40"
+    onClick={closeMenu}
+  />
+)}
+
 
       {isMenuOpen && (
         <div
-          className="xl:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="xl:hidden z-40"
           onClick={closeMenu}
         />
       )}
