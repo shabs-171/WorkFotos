@@ -9,6 +9,8 @@ import Feature from "./Feature";
 import PricingPage from "@/app/pricing/page";
 import FeatureDetail from "./FearureDetails";
 import Slider from "./Slider";
+import AccordionSection from "./accordion";
+import FAQAccordion from "./accordion";
 
 
 
@@ -21,6 +23,7 @@ export default function Main() {
       <Feature/>
       <FeatureDetail/>
       <Slider/> 
+      <FAQAccordion/>
     </main>
   );
 }

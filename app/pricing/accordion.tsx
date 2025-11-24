@@ -103,7 +103,7 @@ const FAQAccordion: React.FC = () => {
                 alt="WorkFotos photographer"
                 width={527}
                 height={544}
-                className="w-full h-full  rounded-3xl"
+                className="w-full lg:h-[400px] md:h-[450px]  rounded-3xl"
                 priority
               />
             </div>
@@ -116,7 +116,7 @@ const FAQAccordion: React.FC = () => {
             </h1>
 
             {/* Scroll area with matching height */}
-            <div className="flex-1   overflow-y-auto pr-2 space-y-4 ">
+            <div className="flex-1   overflow-y-auto pr-2 lg:space-y-6 md:space-y-5 ">
               {faqs.map((item, index) => (
                 <details
                   key={index}
