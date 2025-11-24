@@ -23,7 +23,7 @@ export default function Main() {
       <Feature/>
       <FeatureDetail/>
       <Slider/> 
-      <FAQAccordion/>
+      
     </main>
   );
 }

@@ -29,7 +29,7 @@ const slides = [
 
 const Slider = () => {
   return (
-    <div className="w-full flex justify-center py-12 md:py-20 bg-white">
+    <div className="w-full h-auto flex justify-center py-12 md:py-20 bg-white">
       <div className="w-[87%] max-w-[1252px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12 mx-auto max-w-[704px]">
@@ -113,14 +113,14 @@ const Slider = () => {
                 <div
                   className={`relative transition-all duration-300 ease-in-out 
                     w-full
-                    max-w-[342px] h-[245px]          /* mobile default */
+                    max-w-[342px] h-auto          /* mobile default */
                     md:max-w-[706px] md:h-[270px]   /* tablet */
                     lg:max-w-[800px] lg:h-[306px]   /* laptop */
                     ${isActive ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
                 >
                   {/* Background */}
                   <div
-                    className="absolute inset-0 rounded-[14px] md:rounded-[16px]"
+                    className="absolute inset-0 rounded-[14px] md:rounded-[16px] h-auto "
                     style={{
                       backgroundImage: "url('/slider1.png')",
                       backgroundSize: "cover",
@@ -131,29 +131,29 @@ const Slider = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-3 md:p-6">
+                  <div className="relative z-10 flex flex-col justify-between h-full p-3 md:p-6 ">
                     {/* Quote Icon */}
                     <Image
                       src="/slider3.png"
                       width={32}
                       height={32}
                       alt=""
-                      className="w-6 h-6 md:w-8 md:h-8 mb-2"
+                      className="w-6 h-6 md:w-8 md:h-8 mb-3 sm:w-[63px] sm:h-[42px] ml-3 "
                     />
 
                     {/* Text Content */}
-                    <p className="text-xs md:text-sm leading-relaxed text-gray-800 flex-1 break-words line-clamp-4 md:line-clamp-5">
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-800 flex-1 break-words line-clamp-4 md:line-clamp-5 sm: text-[12px]  ml-3 lg:text-[16px]">
                       {slide.text}
                     </p>
 
                     {/* Avatar Section */}
-                    <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mt-2 md:mt-3 h-[40px] md:h-[50px]">
+                    <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mt-2 md:mt-3 h-[40px] md:h-[50px] ml-3">
                       <Image
                         src={slide.avatar}
                         width={50}
                         height={50}
                         alt={slide.name}
-                        className="rounded-full w-10 h-10 md:w-12 md:h-12 object-contain flex-shrink-0"
+                        className="rounded-full w-10 h-10 md:w-12 md:h-12 sm:h-[42px] sm:w-[42px] "
                       />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs sm:text-sm md:text-base font-bold text-gray-900 break-words truncate">
