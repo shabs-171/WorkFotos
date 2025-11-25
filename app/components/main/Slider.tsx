@@ -87,7 +87,7 @@ const Slider = () => {
               centeredSlides: true,
             },
             1024: {
-              slidesPerView: 1,
+              slidesPerView: 1.5,
               spaceBetween: 30,
               centeredSlides: true,
             },
@@ -144,7 +144,7 @@ const Slider = () => {
     />
 
     {/* Text Content */}
-    <p className="text-xs md:text-sm leading-relaxed text-gray-800 flex-1 break-words line-clamp-4 md:line-clamp-5 ml-3 lg:text-[16px]">
+    <p className="text-xs md:text-[16px] leading-relaxed text-gray-800 flex-1 break-words line-clamp-4 md:line-clamp-5 ml-3 lg:text-[18px]">
       {slide.text}
     </p>
 

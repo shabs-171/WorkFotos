@@ -7,7 +7,9 @@ const WorksiteRoles = () => {
   return (
     <>
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
+        {/* 87% Container Applied */}
+        <div className="container-87 mx-auto text-center">
+
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Built for Every <span className="text-blue-600">Worksite</span> Role
@@ -20,7 +22,7 @@ const WorksiteRoles = () => {
 
           {/* Cards Grid */}
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {/* Card 1 - Interior Designer */}
+            
             <VideoCard 
               imageSrc="/inter.jpg"
               videoSrc="/inter.mp4"
@@ -28,7 +30,6 @@ const WorksiteRoles = () => {
               title="Interior Designer"
             />
 
-            {/* Card 2 - General Contractors */}
             <VideoCard 
               imageSrc="/const1.jpg"
               videoSrc="/construction.mp4"
@@ -36,7 +37,6 @@ const WorksiteRoles = () => {
               title="General Contractors"
             />
 
-            {/* Card 3 - Real Estate Agency */}
             <VideoCard 
               imageSrc="/estate.jpg"
               videoSrc="/estate.mp4"
@@ -44,13 +44,13 @@ const WorksiteRoles = () => {
               title="Real Estate Agency"
             />
 
-            {/* Card 4 - Tourism & Travel Agency */}
             <VideoCard 
               imageSrc="/tour.png"
               videoSrc="/tour.mp4"
               altText="Tourism & Travel Agency"
               title="Tourism & Travel Agency"
             />
+
           </div>
         </div>
       </section>
@@ -98,7 +98,8 @@ const VideoCard = ({ imageSrc, videoSrc, altText, title }: VideoCardProps) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="w-60 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 relative">
-        {/* Image - shown by default */}
+        
+        {/* Image */}
         <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0">
           <Image
             src={imageSrc}
@@ -109,7 +110,7 @@ const VideoCard = ({ imageSrc, videoSrc, altText, title }: VideoCardProps) => {
           />
         </div>
         
-        {/* Video - shown on hover */}
+        {/* Video */}
         <video
           ref={videoRef}
           muted
@@ -119,7 +120,6 @@ const VideoCard = ({ imageSrc, videoSrc, altText, title }: VideoCardProps) => {
           className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         >
           <source src={videoSrc} type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
       </div>
       
