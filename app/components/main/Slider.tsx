@@ -82,17 +82,17 @@ const Slider = () => {
               centeredSlides: true,
             },
             768: {
-              slidesPerView: 1.2,
+              slidesPerView: 1,
               spaceBetween: 20,
               centeredSlides: true,
             },
             1024: {
-              slidesPerView: 1.5,
+              slidesPerView: 1,
               spaceBetween: 30,
               centeredSlides: true,
             },
             1280: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.8,
               spaceBetween: 40,
               centeredSlides: true,
             },
@@ -111,8 +111,8 @@ const Slider = () => {
             >
               {({ isActive }) => (
                 <div className="relative transition-all duration-300 ease-in-out 
-  w-full max-w-[342px] md:max-w-[706px] lg:max-w-[700px] 
-  scale-100 opacity-100">
+                   w-full  sm:max-w-[502px] md:max-w-[706px] lg:max-w-[700px] 
+                  scale-100 opacity-100">
 
   {/* Background Image */}
   <div className="absolute inset-0 z-0 rounded-[14px] overflow-hidden">
