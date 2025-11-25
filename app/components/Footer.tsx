@@ -8,14 +8,14 @@ export default function Footer() {
       {/* BANNER - Same 87% width as header */}
       <div className="container-87">
         <div
-          className="relative w-full rounded-2xl overflow-hidden text-white p-6 md:p-8 lg:p-10 flex flex-col items-center justify-between bg-cover bg-center"
+          className="relative w-full rounded-2xl overflow-hidden text-white sm:pl-6 pr-6 pt-6 md:pr-8 pl-8  lg:pl-10 flex flex-col items-center justify-between bg-cover bg-center"
           style={{
             backgroundImage: "url('/image5.png')",
           }}
         >
           <div className="w-full flex flex-col lg:flex-row items-center justify-between">
             {/* Left Text Section */}
-            <div className="w-full lg:w-1/2 max-w-lg text-left mb-8 lg:mb-0">
+            <div className="w-full lg:w-1/2 max-w-[1440px] text-left mb-8 lg:mb-0">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug">
                 Ready To Organize Your Photos In Smarter Way
               </h2>
@@ -36,13 +36,13 @@ export default function Footer() {
             </div>
 
             {/* Image Section */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mb-[-28px] sm:mb-[-50px] md:mb-[-80px] lg:mb-[-100px]">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <Image
                 src="/iphone.png"
                 alt="App preview"
                 width={220}
-                height={400}
-                className="object-contain max-w-[180px] sm:max-w-[200px] md:max-w-[220px]"
+                height={500}
+                className="object-cover h-full w-auto"
               />
             </div>
           </div>

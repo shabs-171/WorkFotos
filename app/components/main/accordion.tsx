@@ -46,12 +46,7 @@ const AccordionSection = () => {
     },
   ];
 
-  return (
-    
-    
-
-
-    
+  return (   
 <div className="hidden md:flex max-w-7xl mx-auto h-full  ">
         {/* Parent container with justify-between for equal spacing */}
         <div className="  container-87 flex justify-between items-center gap-5 lg:gap-16 ">

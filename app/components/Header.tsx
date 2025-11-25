@@ -112,10 +112,11 @@ const Header = () => {
       </div>
 
 <div
-  className={`fixed top-0 right-0 h-full bg-blue-800 z-50 flex flex-col justify-between transition-transform duration-300
-    w-full md:w-1/2  /* full width on mobile, half width on tablet and up */
+  className={`fixed top-0 right-0 h-full bg-white z-50 flex flex-col transition-transform duration-300
+    w-full md:w-1/2
     ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
 >
+  {/* Close Button */}
   <div className="absolute top-5 right-5">
     <button
       onClick={closeMenu}
@@ -132,15 +133,33 @@ const Header = () => {
     </button>
   </div>
 
-  <div className="px-8 pt-24 flex flex-col gap-6">
+  {/* LOGO */}
+  <div className="px-8 pt-10 ">
+    <Image
+      src="/logo2.png"
+      alt="WorkFotos Logo"
+      width={160}
+      height={40}
+      className="object-contain"
+    />
+  </div>
+
+  {/* MENU LINKS — directly under logo */}
+  <div className="px-8 mt-20 sm:mt-20 md:mt-[120px] flex flex-col gap-4 md:gap-7">
+ {/* gap ≈ 10px */}
     {["How it works", "Pricing", "Contact"].map((item) => {
-      const href = item === "Pricing" ? "/pricing" : "#";
+       const href =
+                item === "Pricing"
+                  ? "/pricing"
+                  : item === "How it works"
+                  ? "/work"
+                  : "/contact";
       return (
         <Link
           key={item}
           href={href}
           onClick={closeMenu}
-          className="text-white text-[18px] font-medium hover:text-blue-200 transition-colors duration-200 text-left"
+          className="text-black text-[18px] font-medium hover:text-blue-600 transition-colors duration-200 text-left"
         >
           {item}
         </Link>
@@ -148,15 +167,18 @@ const Header = () => {
     })}
   </div>
 
-  <div className="px-8 pb-12 flex flex-col gap-4">
-    <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
+  {/* BUTTONS at bottom */}
+  <div className="mt-auto px-8 pb-12 flex flex-col gap-4">
+    <button className="border border-black text-black px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
       Member Login
     </button>
-    <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
+    <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-200 font-semibold text-[15px] w-full h-[49px] flex items-center justify-center">
       Join Today
     </button>
   </div>
 </div>
+
+
 
 {/* Overlay */}
 {isMenuOpen && (

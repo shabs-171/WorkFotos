@@ -72,7 +72,7 @@ const Slider = () => {
             nextEl: ".swiper-button-next-custom",
           }}
           loop={true}
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={1}
           centeredSlides={true}
           breakpoints={{
@@ -98,7 +98,7 @@ const Slider = () => {
             },
             1440: {
               slidesPerView: 1.5,
-              spaceBetween: 50,
+              spaceBetween: 10,
               centeredSlides: true,
             },
           }}
